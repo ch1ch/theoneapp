@@ -1,0 +1,59 @@
+//
+// Prefix header for all source files of the 'SinaNews' target in the 'SinaNews' project
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_3_0
+#warning "This project uses features only available in iOS SDK 3.0 and later."
+#endif
+
+#ifdef __OBJC__
+  #import <UIKit/UIKit.h>
+  #import <Foundation/Foundation.h>
+#endif
+
+//
+#define DEBUG
+
+#import "CheckNetWork.h"
+
+
+#define kDeviceWidth [UIScreen mainScreen].bounds.size.width
+#define kDeviceHeight [UIScreen mainScreen].bounds.size.height
+#define leftChanelWidth 220
+
+#define perPageNewsCount 10
+
+#define newsCellHeight 88
+
+#define newsCategoryCellHeight 50
+
+#define lightGreyColor [UIColor colorWithRed:80.0f/255.0f green:80.0f/255.0f  blue:80.0f/255.0f  alpha:1.0f]
+
+#define cccColor [UIColor colorWithRed:236.0/255.0f green:238.0/255.0f blue:239.0/255.0f alpha:1.0f]
+
+//#define requestURL(typeName,pageNo,pagePer) [NSString stringWithFormat:@"http://qingbin.sinaapp.com/api/lists?ntype=%@&pageNo=%d&pagePer=%d&list.htm",typeName,pageNo,pagePer]
+
+#define requestURL(typeName,pageNo,pagePer) [NSString stringWithFormat:@"http://www.onemovie.com/json/list.php?list=%@",typeName]
+
+
+#define defaultTypeName @"资讯"
+
+
+#define newDetailURL(id) [NSString stringWithFormat:@"http://www.onemovie.com/json/des.php?des=%d",id]
+//#define newDetailURL(id) [NSString stringWithFormat:@"http://www.onemovie.com/archive/info/%d",id]
+
+
+
+//判断是否处于debug模式
+#ifdef DEBUG
+#define debugLog(...) NSLog(__VA_ARGS__)
+#define debugMethod() NSLog(@"%s", __func__)
+#else
+#define debugLog(...)
+#define debugMethod()
+#endif
+
+
+
